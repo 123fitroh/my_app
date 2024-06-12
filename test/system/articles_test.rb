@@ -15,8 +15,8 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "New Article"
 
     fill_in "Description", with: @article.description
-    fill_in "Title", with: @article.title
-    fill_in "User", with: @article.user_id
+    fill_in "Tittle", with: @article.tittle
+    fill_in "User", with: @article.user
     click_on "Create Article"
 
     assert_text "Article was successfully created"
@@ -28,8 +28,8 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Description", with: @article.description
-    fill_in "Title", with: @article.title
-    fill_in "User", with: @article.user_id
+    fill_in "Tittle", with: @article.tittle
+    fill_in "User", with: @article.user
     click_on "Update Article"
 
     assert_text "Article was successfully updated"
