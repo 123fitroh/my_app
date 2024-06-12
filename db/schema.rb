@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2024_06_12_083005) do
 
   create_table "articles", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "tittle"
+    t.integer "user_id", null: false
+    t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,5 +34,6 @@ ActiveRecord::Schema.define(version: 2024_06_12_083005) do
     t.string "password"
   end
 
+  add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
 end
